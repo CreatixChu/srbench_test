@@ -1,3 +1,35 @@
+# From CXT:
+```
+cd srbench/experience
+
+python analyze.py \
+            "/data/xieting/pmlb/datasets/feynman_*" \
+            -results ../results_sym_data \
+            -target_noise 0.01 \
+            -sym_data \
+            -n_trials 10 \
+            -m 16384 \
+            -time_limit 1:00 \
+            -job_limit 100000 \
+            -tuned \
+	        --local \
+	        -ml DSRRegressor \ 
+	        -test
+```
+
+expect installing time: 1 hour 
+
+```
+git clone git@github.com:cavalab/srbench.git
+cd srbench
+conda activate base
+conda install mamba -n base -c conda-forge
+mamba env create -f environment.yml
+conda activate srbench
+bash install.sh
+```
+
+
 
 # SRBench: A Living Benchmark for Symbolic Regression
 
